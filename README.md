@@ -1,29 +1,37 @@
-# <span style="color: gold"> Strapi Project </span>
+# Strapi Project
 
-## Installation de Strapi
+## Installation of Strapi
 
-Pour installer `Strapi` dans votre dossier, veuillez entrez cette commande dans le ``terminal`` de votre dossier 
-
-
-- '<span style="color: turquoise"> npx create-strapi-app@latest my-project --quickstart </span>'
+To install Strapi in your folder, please enter this command in the terminal of your folder
 
 ```bash
 npx create-strapi-app@latest my-project --quickstart
 ```
 ## Start your Strapi
 
-Pour lancer votre application ``Strapi`` avec l'autoReload activé, veuillez entrer cette commande dans le ``terminal``
+To launch your Strapi application with autoReload enabled, enter this command in the terminal
 
-- '<span style="color: turquoise"> npm run develop </span>'
+```bash
+ npm run develop 
+ ```
 
-## Build your Strapi 
+## Build your Strapi
 
-Pour lancer votre application `Strapi` avec `l'autoReload` désactivé, veuillez entrer cette commande dans le ``terminal``
+To launch your Strapi application with autoReload disabled, enter this command in the terminal
 
-- '<span style="color: turquoise"> npm run start </span>'
+```bash
+npm run start
+```
 
+## Install of all dépendences
 
-----
+Install all dependencies by entering this command in the terminal
+
+````bash
+npm i
+````
+
+---
 Mathis Ghigotti <br>
 Mayeul Gras
 
