@@ -7,6 +7,15 @@ To install Strapi in your folder, please enter this command in the terminal of y
 ```bash
 npx create-strapi-app@latest my-project --quickstart
 ```
+
+## Install of all dépendences
+
+Install all dependencies by entering this command in the terminal
+
+````bash
+npm i
+````
+
 ## Start your Strapi
 
 To launch your Strapi application with autoReload enabled, enter this command in the terminal
@@ -23,13 +32,7 @@ To launch your Strapi application with autoReload disabled, enter this command i
 npm run start
 ```
 
-## Install of all dépendences
 
-Install all dependencies by entering this command in the terminal
-
-````bash
-npm i
-````
 
 ---
 Mathis Ghigotti <br>
