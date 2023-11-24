@@ -695,6 +695,7 @@ export interface ApiBookBook extends Schema.CollectionType {
     Synopsis: Attribute.Text;
     Cover: Attribute.Media;
     Date: Attribute.Date;
+    Quantity: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -723,6 +724,7 @@ export interface ApiCdCd extends Schema.CollectionType {
     Description: Attribute.Text;
     Date: Attribute.Date;
     Artist: Attribute.String;
+    Quantity: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -750,6 +752,7 @@ export interface ApiElectronicElectronic extends Schema.CollectionType {
     Description: Attribute.Text;
     Price: Attribute.Float;
     Brand: Attribute.String;
+    Quantity: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -37,6 +37,9 @@
     },
     "Artist": {
       "type": "string"
+    },
+    "Quantity": {
+      "type": "integer"
     }
   }
 }
