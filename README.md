@@ -1,12 +1,5 @@
 # 🚀 Strapi Project
 
-## ⚙️ Installation of Strapi
-
-To install Strapi in your folder, please enter this command in the terminal of your folder
-
-```bash
-npx create-strapi-app@latest my-project --quickstart
-```
 
 ## ⚙️ Install of all dépendences
 
@@ -32,9 +25,10 @@ npm run start
 
 ## Grafana installation
 
-Installez sur votre ordinateur la bonne version de [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/), windows si vous êtes sur windows et Mac si vous êtes sur Mac et Linux si vous êtes sur Linux. 
+Install the correct version of [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/) on your computer, Windows if you're on Windows, Mac if you're on Mac and Linux if you're on Linux. 
 
-Grafana sert à voir votre dashboard.
+Import `Dashboard.json` in Grafana.
+It's your dashboard viewer.
 
 
 ---
