@@ -631,7 +631,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -660,6 +659,26 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    cds: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::cd.cd'
+    >;
+    electronics: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::electronic.electronic'
+    >;
+    book: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToOne',
+      'api::book.book'
+    >;
+    admin_user: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToOne',
+      'admin::user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -670,6 +689,40 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'plugin::users-permissions.user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAdminAdmin extends Schema.CollectionType {
+  collectionName: 'admins';
+  info: {
+    singularName: 'admin';
+    pluralName: 'admins';
+    displayName: 'admin';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    admin_user: Attribute.Relation<
+      'api::admin.admin',
+      'oneToOne',
+      'admin::user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::admin.admin',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::admin.admin',
       'oneToOne',
       'admin::user'
     > &
@@ -695,7 +748,16 @@ export interface ApiBookBook extends Schema.CollectionType {
     Synopsis: Attribute.Text;
     Cover: Attribute.Media;
     Date: Attribute.Date;
-    Quantity: Attribute.Integer;
+    Quantity: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 0;
+      }>;
+    Createby: Attribute.String;
+    user: Attribute.Relation<
+      'api::book.book',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -725,6 +787,11 @@ export interface ApiCdCd extends Schema.CollectionType {
     Date: Attribute.Date;
     Artist: Attribute.String;
     Quantity: Attribute.Integer;
+    user: Attribute.Relation<
+      'api::cd.cd',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -753,6 +820,11 @@ export interface ApiElectronicElectronic extends Schema.CollectionType {
     Price: Attribute.Float;
     Brand: Attribute.String;
     Quantity: Attribute.Integer;
+    user: Attribute.Relation<
+      'api::electronic.electronic',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -787,6 +859,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::admin.admin': ApiAdminAdmin;
       'api::book.book': ApiBookBook;
       'api::cd.cd': ApiCdCd;
       'api::electronic.electronic': ApiElectronicElectronic;
