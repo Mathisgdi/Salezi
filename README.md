@@ -1,6 +1,6 @@
-# Strapi Project
+# 🚀 Strapi Project
 
-## Installation of Strapi
+## ⚙️ Installation of Strapi
 
 To install Strapi in your folder, please enter this command in the terminal of your folder
 
@@ -8,7 +8,7 @@ To install Strapi in your folder, please enter this command in the terminal of y
 npx create-strapi-app@latest my-project --quickstart
 ```
 
-## Install of all dépendences
+## ⚙️ Install of all dépendences
 
 Install all dependencies by entering this command in the terminal
 
@@ -16,7 +16,7 @@ Install all dependencies by entering this command in the terminal
 npm i
 ````
 
-## Start your Strapi
+## ⚙️ Start your Strapi
 
 To launch your Strapi application with autoReload enabled, enter this command in the terminal
 
@@ -24,14 +24,17 @@ To launch your Strapi application with autoReload enabled, enter this command in
  npm run develop 
  ```
 
-## Build your Strapi
-
 To launch your Strapi application with autoReload disabled, enter this command in the terminal
 
 ```bash
 npm run start
 ```
 
+## Grafana installation
+
+Installez sur votre ordinateur la bonne version de [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/), windows si vous êtes sur windows et Mac si vous êtes sur Mac et Linux si vous êtes sur Linux. 
+
+Grafana sert à voir votre dashboard.
 
 
 ---
