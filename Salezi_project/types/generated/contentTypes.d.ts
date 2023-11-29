@@ -702,6 +702,7 @@ export interface ApiAdminAdmin extends Schema.CollectionType {
     singularName: 'admin';
     pluralName: 'admins';
     displayName: 'admin';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -750,7 +751,7 @@ export interface ApiBookBook extends Schema.CollectionType {
     Date: Attribute.Date;
     Quantity: Attribute.Integer &
       Attribute.SetMinMax<{
-        min: 0;
+        min: 1;
       }>;
     Createby: Attribute.String;
     user: Attribute.Relation<
@@ -758,6 +759,8 @@ export interface ApiBookBook extends Schema.CollectionType {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+    fdgfd: Attribute.Blocks;
+    type: Attribute.Enumeration<['Broch\u00E9', 'E-book', 'Poche']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

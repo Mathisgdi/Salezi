@@ -37,7 +37,7 @@
     },
     "Quantity": {
       "type": "integer",
-      "min": 0
+      "min": 1
     },
     "Createby": {
       "type": "string"
@@ -47,6 +47,17 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "book"
+    },
+    "fdgfd": {
+      "type": "blocks"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Broché",
+        "E-book",
+        "Poche"
+      ]
     }
   }
 }
