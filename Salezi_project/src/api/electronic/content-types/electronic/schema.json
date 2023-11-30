@@ -43,6 +43,15 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "electronics"
+    },
+    "Rate": {
+      "type": "integer",
+      "min": 1,
+      "max": 10
+    },
+    "Sell": {
+      "type": "integer",
+      "min": 0
     }
   }
 }
