@@ -38,12 +38,6 @@
     "Quantity": {
       "type": "integer"
     },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "electronics"
-    },
     "Rate": {
       "type": "integer",
       "min": 1,

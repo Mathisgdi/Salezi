@@ -659,21 +659,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
-    cds: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::cd.cd'
-    >;
-    electronics: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::electronic.electronic'
-    >;
-    book: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToOne',
-      'api::book.book'
-    >;
     admin_user: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToOne',
@@ -754,18 +739,12 @@ export interface ApiBookBook extends Schema.CollectionType {
         min: 1;
       }>;
     Createby: Attribute.String;
-    user: Attribute.Relation<
-      'api::book.book',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
     type: Attribute.Enumeration<['Broch\u00E9', 'E-book', 'Poche']>;
-    Rate: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 1;
-        max: 10;
-      }>;
     Sell: Attribute.Integer;
+    rate: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 0;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -795,11 +774,6 @@ export interface ApiCdCd extends Schema.CollectionType {
     Date: Attribute.Date;
     Artist: Attribute.String;
     Quantity: Attribute.Integer;
-    user: Attribute.Relation<
-      'api::cd.cd',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
     Rate: Attribute.Integer &
       Attribute.SetMinMax<{
         min: 1;
@@ -837,11 +811,6 @@ export interface ApiElectronicElectronic extends Schema.CollectionType {
     Price: Attribute.Float;
     Brand: Attribute.String;
     Quantity: Attribute.Integer;
-    user: Attribute.Relation<
-      'api::electronic.electronic',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
     Rate: Attribute.Integer &
       Attribute.SetMinMax<{
         min: 1;

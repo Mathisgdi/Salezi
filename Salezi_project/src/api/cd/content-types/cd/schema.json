@@ -41,12 +41,6 @@
     "Quantity": {
       "type": "integer"
     },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "cds"
-    },
     "Rate": {
       "max": 10,
       "type": "integer",
