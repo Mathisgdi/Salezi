@@ -46,6 +46,15 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "cds"
+    },
+    "Rate": {
+      "max": 10,
+      "type": "integer",
+      "min": 1
+    },
+    "Sell": {
+      "type": "integer",
+      "min": 0
     }
   }
 }

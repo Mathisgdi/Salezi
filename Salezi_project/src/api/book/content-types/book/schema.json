@@ -48,9 +48,6 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "book"
     },
-    "fdgfd": {
-      "type": "blocks"
-    },
     "type": {
       "type": "enumeration",
       "enum": [
@@ -58,6 +55,14 @@
         "E-book",
         "Poche"
       ]
+    },
+    "Rate": {
+      "type": "integer",
+      "max": 10,
+      "min": 1
+    },
+    "Sell": {
+      "type": "integer"
     }
   }
 }

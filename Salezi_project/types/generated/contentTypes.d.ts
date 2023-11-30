@@ -759,8 +759,13 @@ export interface ApiBookBook extends Schema.CollectionType {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
-    fdgfd: Attribute.Blocks;
     type: Attribute.Enumeration<['Broch\u00E9', 'E-book', 'Poche']>;
+    Rate: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 10;
+      }>;
+    Sell: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -795,6 +800,15 @@ export interface ApiCdCd extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    Rate: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 10;
+      }>;
+    Sell: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 0;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -828,6 +842,15 @@ export interface ApiElectronicElectronic extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    Rate: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 10;
+      }>;
+    Sell: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 0;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
