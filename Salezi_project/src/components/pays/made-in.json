@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_pays_made_ins",
+  "info": {
+    "displayName": "Made in"
+  },
+  "options": {},
+  "attributes": {
+    "Pays": {
+      "type": "string"
+    }
+  }
+}

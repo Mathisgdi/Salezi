@@ -49,6 +49,12 @@
     "Sell": {
       "type": "integer",
       "min": 0
+    },
+    "Made": {
+      "displayName": "Made",
+      "type": "component",
+      "repeatable": false,
+      "component": "pays.made"
     }
   }
 }

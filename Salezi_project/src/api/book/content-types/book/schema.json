@@ -56,6 +56,12 @@
     "rate": {
       "type": "integer",
       "min": 0
+    },
+    "Type": {
+      "displayName": "Type",
+      "type": "component",
+      "repeatable": false,
+      "component": "broche.type"
     }
   }
 }

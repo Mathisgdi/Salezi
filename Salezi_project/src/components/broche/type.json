@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_broche_types",
+  "info": {
+    "displayName": "Type",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Made": {
+      "type": "string"
+    }
+  }
+}

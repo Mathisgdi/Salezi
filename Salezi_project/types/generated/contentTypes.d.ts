@@ -362,163 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAdminAdmin extends Schema.CollectionType {
-  collectionName: 'admins';
-  info: {
-    singularName: 'admin';
-    pluralName: 'admins';
-    displayName: 'admin';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    admin_user: Attribute.Relation<
-      'api::admin.admin',
-      'oneToOne',
-      'admin::user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::admin.admin',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::admin.admin',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiBookBook extends Schema.CollectionType {
-  collectionName: 'books';
-  info: {
-    singularName: 'book';
-    pluralName: 'books';
-    displayName: 'books';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Price: Attribute.Float;
-    Author: Attribute.String;
-    Synopsis: Attribute.Text;
-    Cover: Attribute.Media;
-    Date: Attribute.Date;
-    Quantity: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 1;
-      }>;
-    Createby: Attribute.String;
-    type: Attribute.Enumeration<['Broch\u00E9', 'E-book', 'Poche']>;
-    Sell: Attribute.Integer;
-    rate: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 0;
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::book.book', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::book.book', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCdCd extends Schema.CollectionType {
-  collectionName: 'cds';
-  info: {
-    singularName: 'cd';
-    pluralName: 'cds';
-    displayName: 'cds';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String;
-    Price: Attribute.Float;
-    Image: Attribute.Media;
-    Description: Attribute.Text;
-    Date: Attribute.Date;
-    Artist: Attribute.String;
-    Quantity: Attribute.Integer;
-    Rate: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 1;
-        max: 10;
-      }>;
-    Sell: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 0;
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::cd.cd', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::cd.cd', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiElectronicElectronic extends Schema.CollectionType {
-  collectionName: 'electronics';
-  info: {
-    singularName: 'electronic';
-    pluralName: 'electronics';
-    displayName: 'electronics';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String;
-    Image: Attribute.Media;
-    Description: Attribute.Text;
-    Price: Attribute.Float;
-    Brand: Attribute.String;
-    Quantity: Attribute.Integer;
-    Rate: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 1;
-        max: 10;
-      }>;
-    Sell: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 0;
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::electronic.electronic',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::electronic.electronic',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -838,6 +681,218 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAdminAdmin extends Schema.CollectionType {
+  collectionName: 'admins';
+  info: {
+    singularName: 'admin';
+    pluralName: 'admins';
+    displayName: 'admin';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    admin_user: Attribute.Relation<
+      'api::admin.admin',
+      'oneToOne',
+      'admin::user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::admin.admin',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::admin.admin',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBookBook extends Schema.CollectionType {
+  collectionName: 'books';
+  info: {
+    singularName: 'book';
+    pluralName: 'books';
+    displayName: 'books';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Price: Attribute.Float;
+    Author: Attribute.String;
+    Synopsis: Attribute.Text;
+    Cover: Attribute.Media;
+    Date: Attribute.Date;
+    Quantity: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+      }>;
+    Createby: Attribute.String;
+    type: Attribute.Enumeration<['Broch\u00E9', 'E-book', 'Poche']>;
+    Sell: Attribute.Integer;
+    rate: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 0;
+      }>;
+    Type: Attribute.Component<'broche.type'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::book.book', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::book.book', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCdCd extends Schema.CollectionType {
+  collectionName: 'cds';
+  info: {
+    singularName: 'cd';
+    pluralName: 'cds';
+    displayName: 'cds';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Price: Attribute.Float;
+    Image: Attribute.Media;
+    Description: Attribute.Text;
+    Date: Attribute.Date;
+    Artist: Attribute.String;
+    Quantity: Attribute.Integer;
+    Rate: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 10;
+      }>;
+    Sell: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 0;
+      }>;
+    Made: Attribute.Component<'pays.made'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::cd.cd', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::cd.cd', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiElectronicElectronic extends Schema.CollectionType {
+  collectionName: 'electronics';
+  info: {
+    singularName: 'electronic';
+    pluralName: 'electronics';
+    displayName: 'electronics';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Image: Attribute.Media;
+    Description: Attribute.Text;
+    Price: Attribute.Float;
+    Brand: Attribute.String;
+    Quantity: Attribute.Integer;
+    Rate: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 10;
+      }>;
+    Sell: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 0;
+      }>;
+    Made: Attribute.Component<'pays.made-in'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::electronic.electronic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::electronic.electronic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomepageHomepage extends Schema.SingleType {
+  collectionName: 'homepages';
+  info: {
+    singularName: 'homepage';
+    pluralName: 'homepages';
+    displayName: 'Homepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Main: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTestTest extends Schema.SingleType {
+  collectionName: 'tests';
+  info: {
+    singularName: 'test';
+    pluralName: 'tests';
+    displayName: 'test';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    test: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -848,16 +903,18 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::admin.admin': ApiAdminAdmin;
-      'api::book.book': ApiBookBook;
-      'api::cd.cd': ApiCdCd;
-      'api::electronic.electronic': ApiElectronicElectronic;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::admin.admin': ApiAdminAdmin;
+      'api::book.book': ApiBookBook;
+      'api::cd.cd': ApiCdCd;
+      'api::electronic.electronic': ApiElectronicElectronic;
+      'api::homepage.homepage': ApiHomepageHomepage;
+      'api::test.test': ApiTestTest;
     }
   }
 }
