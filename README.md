@@ -27,7 +27,16 @@ npm run start
 
 Install the correct version of [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/) on your computer, Windows if you're on Windows, Mac if you're on Mac and Linux if you're on Linux. 
 
-Import `Dashboard.json` in Grafana.
+Import the `sqlite` plugin in Grafana.
+Put this command in the terminal. 
+
+```bash
+grafana-cli plugins install frser-sqlite-datasource
+```
+
+Go to `http://localhost:3000` , add new datasource and choose the path of data.db. 
+
+Import `Grafana Dashboard.json`.
 It's your dashboard viewer.
 
 
