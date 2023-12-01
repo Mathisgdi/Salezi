@@ -871,28 +871,6 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   };
 }
 
-export interface ApiTestTest extends Schema.SingleType {
-  collectionName: 'tests';
-  info: {
-    singularName: 'test';
-    pluralName: 'tests';
-    displayName: 'test';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    test: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -914,7 +892,6 @@ declare module '@strapi/types' {
       'api::cd.cd': ApiCdCd;
       'api::electronic.electronic': ApiElectronicElectronic;
       'api::homepage.homepage': ApiHomepageHomepage;
-      'api::test.test': ApiTestTest;
     }
   }
 }

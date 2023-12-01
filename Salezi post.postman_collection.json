@@ -1,0 +1,451 @@
+{
+	"info": {
+		"_postman_id": "ce926ec3-dd0d-472b-b9ae-fa99f52b5231",
+		"name": "Salezi post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30682726"
+	},
+	"item": [
+		{
+			"name": "Seller",
+			"item": [
+				{
+					"name": "Book",
+					"item": [
+						{
+							"name": "Get all books",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Books {\n    books {\n        data {\n            id\n            attributes {\n                Title\n                Price\n                Author\n                Synopsis\n                Date\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Book ($id : ID){\n    book(id: $id) {\n        data {\n            id\n            attributes {\n                Title\n                Price\n                Author\n                Synopsis\n                Date\n                Quantity\n                Createby\n                type\n                Sell\n                rate\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": "{\n    \"id\" : 1\n}"
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add a new book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation CreateBook {\n    createBook(\n        data: {\n            Title: \"the 48 low of power\"\n            Price: 12\n            Author: \"Robert Greene\"\n            Synopsis: \"In the book that People magazine proclaimed “beguiling” and “fascinating,” Robert Greene and Joost Elffers have distilled three thousand years of the history of power into 48 essential laws by drawing from the philosophies of Machiavelli, Sun Tzu, and Carl Von Clausewitz and also from the lives of figures ranging from Henry Kissinger to P.T. Barnum.\"\n            Date: \"1 january 2000\"\n            Quantity: 38\n            type: Broche\n            Sell: 23\n            rate: 7\n        }\n    ) {\n        data {\n            id\n            attributes {\n                Title\n                Price\n                Author\n                Synopsis\n                Date\n                Quantity\n                Createby\n                type\n                Sell\n                rate\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation DeleteBook {\n    deleteBook(id: \"1\") {\n        data {\n            id\n            attributes {\n                Title\n                Price\n                Author\n                Synopsis\n                Date\n                Quantity\n                Createby\n                type\n                Sell\n                rate\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cds",
+					"item": [
+						{
+							"name": "Get all cds",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Cds {\n    cds {\n        data {\n            id\n            attributes {\n                Name\n                Price\n                Description\n                Date\n                Artist\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a cd",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Cd ($id : ID) {\n    cd(id: $id) {\n        data {\n            id\n            attributes {\n                Name\n                Price\n                Description\n                Date\n                Artist\n                Quantity\n                Rate\n                Sell\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": "{\n    \"id\" : 2\n}"
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create cd",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation CreateCd {\n    createCd(\n        data: {\n            Name: null\n            Price: null\n            Description: null\n            Date: null\n            Artist: null\n            Quantity: null\n            Sell: null\n            Rate: null\n        }\n    ) {\n        data {\n            id\n            attributes {\n                Name\n                Price\n                Description\n                Date\n                Artist\n                Quantity\n                Rate\n                Sell\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update cd",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation UpdateCd ($id : ID!) {\n    updateCd(\n        id: $id\n        data: {\n            Name: \"Test\"\n            Price: null\n            Description: null\n            Date: null\n            Artist: null\n            Quantity: null\n            Rate: null\n            Sell: null\n        }\n    ) {\n        data {\n            id\n            attributes {\n                Name\n                Price\n                Description\n                Date\n                Artist\n                Quantity\n                Rate\n                Sell\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": "{\n    \"id\" : 6\n}"
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete cd",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation DeleteCd ($id : ID!) {\n    deleteCd(id: $id) {\n        data {\n            id\n            attributes {\n                Name\n                Price\n                Description\n                Date\n                Artist\n                Quantity\n                Rate\n                Sell\n                createdAt\n                updatedAt\n                publishedAt\n                Made {\n                    id\n                    Pays\n                }\n            }\n        }\n    }\n}\n",
+										"variables": "{\n    \"id\" : 8\n}"
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Electronics",
+					"item": [
+						{
+							"name": "Get all electronics",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Electronics {\n    electronics {\n        data {\n            id\n            attributes {\n                Name\n                Description\n                Price\n                Brand\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get an electronics",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Electronic {\n    electronic(id: null) {\n        data {\n            id\n            attributes {\n                Name\n                Description\n                Price\n                Brand\n                Quantity\n                Rate\n                Sell\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create electronics",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update electronics",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete electronics",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation DeleteElectronic {\n    deleteElectronic(id: \"1\") {\n        data {\n            id\n            attributes {\n                Name\n                Description\n                Price\n                Brand\n                Quantity\n                Rate\n                Sell\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+										"variables": "{\n    \"id\" : 8\n}"
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/graphql",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get all items",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Books {\n    books {\n        data {\n            id\n            attributes {\n                Title\n                Price\n                Author\n                Synopsis\n                Date\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n    cds {\n        data {\n            id\n            attributes {\n                Name\n                Price\n                Description\n                Date\n                Artist\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n    electronics {\n        data {\n            id\n            attributes {\n                Name\n                Description\n                Price\n                Brand\n                createdAt\n                updatedAt\n                publishedAt\n            }\n        }\n    }\n}\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/graphql",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "61d5fe1b2b183c581a331b85a90336ba243712166eb62e5e25f54e032054213b19d218ab41c8ebbc78884429b9ad3b55877116f68a781312b5becb7b8a200236f8a01cd73c14c18b7f5e02dd3b18a7257f85cfe842e9eced839b7e14db4cd9fe531fb3cc583bd9ae4896c3a26230f04a22cbdf7af761c52a8acdf04f8c5dd7f3",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:1337",
+			"type": "string"
+		}
+	]
+}
