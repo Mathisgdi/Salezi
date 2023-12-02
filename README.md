@@ -1,7 +1,7 @@
 #  Strapi Project
 
 
-##  Install of all dépendences
+##  Install of all dependences
 
 Install all dependencies by entering this command in the terminal
 
