@@ -1,6 +1,6 @@
 #  Strapi Project 
 <p align=center>
-  <a href="https://skillicons.dev">
+  <a href="https://github.com/">
     <img src="https://skillicons.dev/icons?i=github" />
   </a>
 </p>
@@ -35,7 +35,7 @@ http://localhost:1337/documentation/v1.0.0#/
 
 ## Grafana installation
 <p align=center>
-  <a href="https://skillicons.dev">
+  <a href="https://grafana.com/">
     <img src="https://skillicons.dev/icons?i=grafana" />
   </a>
 </p>
@@ -45,7 +45,7 @@ Install the correct version of [Grafana](https://grafana.com/docs/grafana/latest
 Import the `sqlite` plugin in Grafana.
 Put this command in the terminal.
 <p align=center>
-  <a href="https://skillicons.dev">
+  <a href="https://www.sqlite.org/index.html">
     <img src="https://skillicons.dev/icons?i=sqlite" />
   </a>
 </p> 
