@@ -46,6 +46,6 @@ It's your dashboard viewer.
 
 
 -----
-Mathis Ghigotti <br>
+Mathis Ghidotti <br>
 Mayeul Gras
 
