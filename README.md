@@ -1,7 +1,7 @@
-# 🚀 Strapi Project
+#  Strapi Project
 
 
-## ⚙️ Install of all dépendences
+##  Install of all dépendences
 
 Install all dependencies by entering this command in the terminal
 
@@ -9,7 +9,7 @@ Install all dependencies by entering this command in the terminal
 npm i
 ````
 
-## ⚙️ Start your Strapi
+##  Start your Strapi
 
 To launch your Strapi application with autoReload enabled, enter this command in the terminal
 
